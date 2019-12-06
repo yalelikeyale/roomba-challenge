@@ -1,0 +1,22 @@
+{
+  "name": "roomba-challenge",
+  "version": "0.0.1",
+  "description": "Node coding challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yalelikeyale/roomba-challenge.git"
+  },
+  "author": "Yale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yalelikeyale/roomba-challenge/issues"
+  },
+  "homepage": "https://github.com/yalelikeyale/roomba-challenge#readme",
+  "dependencies": {
+    "mocha": "^6.2.2"
+  }
+}
