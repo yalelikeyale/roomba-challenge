@@ -9,7 +9,7 @@ B. Output Object
 		- Final resting position of roomba 
 		- Dirtclean up count 
 
-B. Map object
+B. Room object
 	- Receives coordinates from input object and determines all boundary positions
 	- Receives dirt positions from input object
 	- Knows the position of the roomba 
