@@ -1,18 +1,32 @@
 'use strict';
 
-const {processInput} = require('./lib');
+const {processInput, genNextMove} = require('./lib');
 let {roomConstructor} = require('./lib');
 let pathName = './input.txt'
 
+//create output handler
+
+const startCleaning = (Room) => {
+	let possibleMoves;
+	console.log(Room.dirtPositions)
+	// for (let i of genNextMove()){
+	// 	Room.runRoombaVacuum()
+	// 	possibleMoves = Room.runRoombaSensors();
+	// 	let movementRequest = Room.movementInstructions[i]
+	// 	if(possibleMoves.includes(movementRequest)){
+	// 		Room.updateRoombaPosition(movementRequest)
+	// 	} 
+	// }
+}
 
 const startJob = async () => {
 	try{
 		const inputObj = await processInput(pathName);
 		let Room = new roomConstructor(inputObj)
-		console.log(Room);
+		startCleaning(Room)
 	}
 	catch(err){
-		console.log(err)
+		throw(err)
 	}
 }
 
