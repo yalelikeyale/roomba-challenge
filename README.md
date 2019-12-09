@@ -32,12 +32,15 @@ NNESEESWNWW
 **Rules:**
 The first row determines the maximum X and Y axis values
 - Non number values will cause an error
+
 The second row determines the starting position of the roomba
 - Non number values will cause an error
+
 The following rows up until the last row determines the positions of the dirt
 - Duplicates will automatically be removed
 - Non number values will be removed
 - If no dirt positions exist the program will not run
+
 The last row tells the roomba which directions to move in. Only N,S,E,W characters are allowed otherwise an error will be raised.
 
 ### **Quick Start**
