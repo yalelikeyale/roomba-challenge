@@ -16,11 +16,11 @@ const startCleaning = async (Room) => {
 		let possibleMoves;
 		let doneCleaning;
 		let movementRequest;
-		let instructor = Room.movementGenerator()
+		let moveInstructor = Room.movementGenerator()
 		while (!doneCleaning){
 			await Room.runRoombaVacuum();
 			possibleMoves = await Room.runRoombaSensors();
-			movementRequest = instructor.next()
+			movementRequest = moveInstructor.next()
 			if(movementRequest.done){
 				doneCleaning = movementRequest.done
 			} else if(possibleMoves.includes(movementRequest.value)){
