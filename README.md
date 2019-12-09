@@ -46,7 +46,7 @@ NNESEESWNWW
 - Only N,S,E,W characters are allowed otherwise an error will be raised.
 
 ### **Quick Start**
-*Developed with Node 13+*
+*Developed with Node 13+. Only dependency is a function from lodash. lodash.isEqual*
 ```
 npm install
 npm start
