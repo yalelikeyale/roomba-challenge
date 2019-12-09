@@ -6,7 +6,7 @@ let pathName = './input.txt'
 
 
 const reportResults = (Room) =>{
-	console.log(`Roomba Search & Destroy Complete. Here are the results of the hunt:
+	console.log(`Roomba Search & Destroy Mission Complete. Here are the results of the hunt:
 	Final Position: ${Room.roombaPosition}
 	Dirt Spots Destroyed: ${Room.cleanUpCount}`)
 }
@@ -27,6 +27,7 @@ const startCleaning = async (Room) => {
 				Room.updateRoombaPosition(movementRequest.value)
 			}
 		}
+		reportResults(Room)
 	} catch(err){
 		console.log(err)
 	}
