@@ -17,14 +17,21 @@ const startCleaning = async (Room) => {
 		let possibleMoves;
 		let doneCleaning;
 		let movementRequest;
+		//movement generator function returns the next move upon request
 		let moveInstructor = Room.movementGenerator()
 		while (!doneCleaning){
+			// clean the current position
 			await Room.runRoombaVacuum();
+			// return array of which directions the roomba can go in
 			possibleMoves = await Room.runRoombaSensors();
+			// get next move from generator function
 			movementRequest = moveInstructor.next()
+			// if generator returns state of done = true finish while loop
 			if(movementRequest.done){
 				doneCleaning = movementRequest.done
+			// check that next move is within possible moves
 			} else if(possibleMoves.includes(movementRequest.value)){
+				// update roomba position
 				Room.updateRoombaPosition(movementRequest.value)
 			}
 		}
@@ -36,8 +43,11 @@ const startCleaning = async (Room) => {
 
 const startJob = async () => {
 	try{
+		// process the input.txt file with lib/inputHandler.js
 		const inputObj = await processInput(pathName);
+		// create a new room class with the validated data from input.txt
 		let Room = new roomConstructor(inputObj)
+		// begin job
 		startCleaning(Room)
 	}
 	catch(err){
